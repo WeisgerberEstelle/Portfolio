@@ -2,12 +2,12 @@
 
 .top-nav {
 
-    .navbar-nav .nav-link {
+     .nav-link {
         font-family: $highlighted-text;
         color      : $light;
     }
 
-    .navbar-nav .nav-link:hover {
+     .nav-link:hover {
         color:$highlight-color;
     }
 
