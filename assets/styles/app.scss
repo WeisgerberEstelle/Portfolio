@@ -6,7 +6,7 @@
 
 
 body {
-    margin: 0;
+    margin          : 0;
     background-color: $primary;
 }
 
@@ -16,11 +16,31 @@ h3,
 h4,
 h5 {
     font-family: $title-family;
-    color:$light;
+    color      : $light;
 }
 
-p, a, li, label {
+p,
+a,
+li,
+label {
     font-family: $text-family;
-    font-size: $text-size;
-    color:$light;
+    font-size  : $text-size;
+    color      : $light;
+}
+
+.link {
+    box-shadow: 3px 3px 3px rgb(19, 19, 19), -3px -3px 3px rgb(48, 48, 48);
+}
+
+.link:hover {
+    box-shadow: inset 3px 3px 3px rgb(19, 19, 19), inset -3px -3px 3px rgb(48, 48, 48);
+}
+
+.contact-btn {
+    font-family: $text-family;
+    color      : $light;
+}
+
+.contact-btn:hover {
+    color: $highlight-color;
 }
