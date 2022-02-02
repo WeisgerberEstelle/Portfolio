@@ -2,7 +2,7 @@
 
 {% block title %}Hello HomeController!{% endblock %}
 
-{% block stylesheets %}{{ encore_entry_link_tags('banner') }}{% endblock %}
+{% block stylesheets %}{{ encore_entry_link_tags('banner') }}{{ encore_entry_link_tags('project') }}{% endblock %}
 {% block body %}
 {% include "items/_header.html.twig"%}
 {% include "items/_banner.html.twig"%}
