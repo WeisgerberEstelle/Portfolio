@@ -1,0 +1,9 @@
+@import "variables.scss";
+
+.top-nav {
+
+    .navbar-nav .nav-link {
+        font-family: $highlighted-text;
+        color      : $secondary;
+    }
+}
