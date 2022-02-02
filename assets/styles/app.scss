@@ -1,5 +1,22 @@
 @import "~bootstrap/scss/bootstrap";
+@import "variables.scss";
 
 body {
-    background-color: red;
+    margin: 0;
+    background-color: $primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: $title-family;
+    color:$light;
+}
+
+p, a, li, label {
+    font-family: $text-family;
+    font-size: $text-size;
+    color:$light;
 }
