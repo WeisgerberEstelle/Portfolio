@@ -24,7 +24,7 @@ class LoginController extends AbstractController
     }
 
     /**
-     * @Route("/logout", name="app_logout", methods={"GET"})
+     * @Route("/deconnection", name="logout", methods={"GET"})
      */
     public function logout(): void
     {
