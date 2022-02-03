@@ -5,14 +5,23 @@ h4 {
 }
 
 .project {
-    height: 200px;
+    height: auto;
+    min-height: 150px;
 }
 
 .photo {
-    height: 200px;
+    height    : 100%;
     object-fit: cover;
 }
 
 .project-header {
     line-height: 40px;
+}
+
+.date {
+    color: $highlight-color;
+}
+
+.description {
+    line-height: 30px;
 }
