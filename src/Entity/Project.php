@@ -7,7 +7,6 @@ use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Technology;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
@@ -82,7 +81,7 @@ class Project
     /**
      * @ORM\ManyToMany(targetEntity=Technology::class, inversedBy="projects")
      */
-    private Technology $technologies;
+    private $technologies;
 
     public function __construct()
     {
