@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\ProjectRepository;
 use DateTimeInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -76,9 +78,15 @@ class Project
      */
     private $updatedAt;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Technology::class, inversedBy="projects")
+     */
+    private $technologies;
+
     public function __construct()
     {
         $this->updatedAt = new \DateTimeImmutable();
+        $this->technologies = new ArrayCollection();
     }
 
     /**
@@ -174,6 +182,30 @@ class Project
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Technology[]
+     */
+    public function getTechnologies(): Collection
+    {
+        return $this->technologies;
+    }
+
+    public function addTechnology(Technology $technology): self
+    {
+        if (!$this->technologies->contains($technology)) {
+            $this->technologies[] = $technology;
+        }
+
+        return $this;
+    }
+
+    public function removeTechnology(Technology $technology): self
+    {
+        $this->technologies->removeElement($technology);
 
         return $this;
     }

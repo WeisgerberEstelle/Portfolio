@@ -2,12 +2,17 @@
 	{% for project in projects %}
 		<div class="d-flex container row my-5 px-0 project">
 			<div class="col-md-6 d-flex flex-column align-items-start justify-content-start">
-				<h4 class="text-secondary">{{project.title}}</h4>
+				<h4 class="text-secondary ancrage" id="{{project.title}}">{{project.title}}</h4>
 				<p class="date mb-3">{{project.startDate|date('F Y') }}
 					/
 					{{project.endDate|date('F Y') }}
 				</p>
 				<p class="description">{{project.description}}</p>
+				<div class="technologies my-3">
+					{% for technology in project.technologies %}
+						<span class="btn rounded-pill text-light border-light m-2">{{ technology.name}}</span>
+					{% endfor %}
+				</div>
 				<a href="{{project.link}}" class="btn btn-primary rounded-pill link my-2 px-3">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right mb-2 me-1" viewBox="0 0 16 16">
 						<path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
