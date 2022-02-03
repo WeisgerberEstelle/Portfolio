@@ -16,10 +16,11 @@ tbody td:hover {
     color: $highlight-color;
 }
 
-label.form-label {
+label.form-label, fieldset legend {
     font-size: 1.3rem;
     font-family: $text-family;
     margin-bottom: 15px;
+    color:$light;
 }
 
 textarea {
@@ -32,4 +33,9 @@ textarea {
 
 button.trash:hover {
     color:$secondary;
+}
+
+.vich-image img{
+    width: 100%;
+    margin-block-start:20px;
 }

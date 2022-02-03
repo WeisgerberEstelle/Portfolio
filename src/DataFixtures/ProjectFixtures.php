@@ -16,7 +16,7 @@ class ProjectFixtures extends Fixture
             'link' => 'https://orleans-cerha.phprover.wilders.dev/',
             'start' => '06-12-2021',
             'end' => '10-02-2022',
-            
+            'picture' => 'placeholder.png'
             
         ],
         [
@@ -25,6 +25,7 @@ class ProjectFixtures extends Fixture
             'link' => '',
             'start' => '19-01-2022',
             'end' => '21-02-2022',
+            'picture' => 'placeholder.png'
         ],
         [
             'title' => 'APCLO - Refonte pour une association de protection des chats',
@@ -32,6 +33,7 @@ class ProjectFixtures extends Fixture
             'description' => ' Refonte du site APCLO afin qu\'il mette en avant les animaux à adopter, de manière plus attrayante, claire et ergonomique afin d’optimiser les adoptions des pensionnaires. Le but étant de moderniser et restructurer le site, ainsi que d’épurer les informations afin de gagner en lisibilité.',
             'start' => '25-10-2021',
             'end' => '19-11-2021',
+            'picture' => 'placeholder.png'
         ]
     ];
     public function load(ObjectManager $manager): void
@@ -41,6 +43,8 @@ class ProjectFixtures extends Fixture
             $newProject->setTitle($project['title']);
             $newProject->setDescription($project['description']);
             $newProject->setLink($project['link']);
+            $newProject->setImage($project['picture']);
+            copy(__DIR__ . '/placeholder.png', __DIR__ . '/../../public/uploads/projets/placeholder.png');
             $newProject->setStartDate(new DateTime($project['start']));
             $newProject->setEndDate(new DateTime($project['end']));
 
