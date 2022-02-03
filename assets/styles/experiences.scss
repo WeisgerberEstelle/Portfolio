@@ -1,0 +1,13 @@
+@import "variables.scss";
+
+.title, .subtitle {
+    font-family: $text-family;
+}
+
+.title {
+    color: $highlight-color;
+}
+
+.description {
+    line-height: 35px;
+}

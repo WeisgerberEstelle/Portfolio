@@ -2,6 +2,11 @@
 
 {% block title %}À propos{% endblock %}
 
+{% block stylesheets %}
+	{{ encore_entry_link_tags('experiences') }}
+{% endblock %}
 {% block body %}
     {% include "items/_header-about.html.twig" %}
+    {% include "items/_experiences.html.twig" %}
+
 {% endblock %}
