@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ExperienceRepository;
+use Symfony\Component\Validator\Constraints as Assert;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,33 +21,39 @@ class Experience
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(max=255)
      */
-    private $title;
+    private ?string $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(max=255)
      */
-    private $Role;
+    private ?string $role;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $description;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\NotBlank
      */
-    private $startDate;
+    private ?DateTimeInterface $startDate;
 
     /**
      * @ORM\Column(type="date", nullable=true)
      */
-    private $endDate;
+    private ?DateTimeInterface $endDate;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(max=21)
      */
-    private $place;
+    private ?string $place;
 
     public function getId(): ?int
     {
@@ -57,7 +65,7 @@ class Experience
         return $this->title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(?string $title): self
     {
         $this->title = $title;
 
@@ -66,12 +74,12 @@ class Experience
 
     public function getRole(): ?string
     {
-        return $this->Role;
+        return $this->role;
     }
 
-    public function setRole(string $Role): self
+    public function setRole(?string $role): self
     {
-        $this->Role = $Role;
+        $this->role = $role;
 
         return $this;
     }
@@ -93,7 +101,7 @@ class Experience
         return $this->startDate;
     }
 
-    public function setStartDate(\DateTimeInterface $startDate): self
+    public function setStartDate(?\DateTimeInterface $startDate): self
     {
         $this->startDate = $startDate;
 

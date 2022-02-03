@@ -20,7 +20,7 @@ label.form-label, fieldset legend {
     font-size: 1.3rem;
     font-family: $text-family;
     margin-bottom: 15px;
-    color:$light;
+    color:$secondary;
 }
 
 textarea {
@@ -31,7 +31,7 @@ textarea {
     color:$highlight-color;
 }
 
-button.trash:hover {
+button.trash:hover, .return:hover {
     color:$secondary;
 }
 

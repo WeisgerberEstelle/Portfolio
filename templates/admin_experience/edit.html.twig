@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une expérience
+{% endblock %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('admin') }}
+{% endblock %}
+{% block body %}
+
+	<main class="container my-5">
+		<h1 class="text-center my-2">Modifier
+		</h1>
+		<h2 class="text-center text-secondary mb-3">
+			{{experience.title}}</h2>
+		<div class="col-md-6 et offset-md-3 fs-4 my-4 text-info edit_form">
+			{{ include('admin_experience/_form.html.twig') }}
+		</div>
+		<div class="col-md-6 et offset-md-3">
+			{{ include('admin_experience/_delete_form.html.twig') }}
+		</div>
+	</main>
+
+{% endblock %}
