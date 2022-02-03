@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('project') }}
+{% endblock %}
+
+{% block body %}
+	{% include "items/_header-projects.html.twig"%}
+	{% include "items/_projects.html.twig"%}
+{% endblock %}
