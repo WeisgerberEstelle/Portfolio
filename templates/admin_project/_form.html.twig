@@ -1,4 +1,18 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn link rounded-pill my-3 px-3 py-2">{{ button_label|default('Sauvegarder') }}</button>
+<div class="col mb-4">
+    {{ form_label(form.title) }}
+	{{ form_widget(form.title) }}
+    {{ form_errors(form.title) }}</div>
+<div class="col mb-4">
+	{{ form_row(form.description) }}</div>
+
+<div class="colmb-">
+	{{ form_row(form.link) }}</div>
+<div class="row mb-4">
+	<div class="col-6">
+		{{ form_row(form.startDate) }}</div>
+	<div class="col-6">
+		{{ form_row(form.endDate) }}</div>
+</div>
+<button class="btn link rounded-pill my-3 px-3 py-2">{{ button_label|default('Sauvegarder') }}</button>
 {{ form_end(form) }}

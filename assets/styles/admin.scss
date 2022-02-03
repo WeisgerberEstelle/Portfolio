@@ -15,3 +15,13 @@ tbody td:hover {
 .ref, .site {
     color: $highlight-color;
 }
+
+label.form-label {
+    font-size: 1.3rem;
+    font-family: $text-family;
+    margin-bottom: 15px;
+}
+
+textarea {
+    height: 150px;
+}
