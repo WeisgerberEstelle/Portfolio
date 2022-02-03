@@ -8,19 +8,22 @@ tbody td {
 tbody td {
     color: $light
 }
+
 tbody td:hover {
     color: $light
 }
 
-.ref, .site {
+.ref,
+.site {
     color: $highlight-color;
 }
 
-label.form-label, fieldset legend {
-    font-size: 1.3rem;
-    font-family: $text-family;
+label.form-label,
+fieldset legend {
+    font-size    : 1.3rem;
+    font-family  : $text-family;
     margin-bottom: 15px;
-    color:$secondary;
+    color        : $secondary;
 }
 
 textarea {
@@ -28,18 +31,25 @@ textarea {
 }
 
 .link:hover {
-    color:$highlight-color;
+    color: $highlight-color;
 }
 
-button.trash:hover, .return:hover {
-    color:$secondary;
+button.trash:hover,
+.return:hover {
+    color: $secondary;
 }
 
-.vich-image img{
-    width: 100%;
-    margin-block-start:20px;
+.vich-image img {
+    width             : 100%;
+    margin-block-start: 20px;
 }
 
 .edit-title {
     font-family: $text-family;
+}
+
+#project_technologies {
+    display  : flex;
+    flex-wrap: wrap;
+    gap      : 20px
 }
