@@ -1,0 +1,35 @@
+@import "variables.scss";
+
+thead th,
+tbody td {
+    font-family: $text-family;
+}
+
+tbody td {
+    color: $light
+}
+tbody td:hover {
+    color: $light
+}
+
+.ref, .site {
+    color: $highlight-color;
+}
+
+label.form-label {
+    font-size: 1.3rem;
+    font-family: $text-family;
+    margin-bottom: 15px;
+}
+
+textarea {
+    height: 150px;
+}
+
+.link:hover {
+    color:$highlight-color;
+}
+
+button.trash:hover {
+    color:$secondary;
+}
