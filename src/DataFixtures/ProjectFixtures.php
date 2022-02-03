@@ -17,8 +17,8 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             'link' => 'https://orleans-cerha.phprover.wilders.dev/',
             'start' => '06-12-2021',
             'end' => '10-02-2022',
-            'picture' => 'placeholder.png',
-            'technologies' => ['PHP', 'Symfony', 'Twig', 'Bootstrap', 'MySQL', 'Figma', 'SCRUM', 'CSS']
+            'technologies' => ['PHP', 'Symfony', 'Twig', 'Bootstrap', 'MySQL', 'Figma', 'SCRUM', 'CSS'],
+            'image' => 'cerha.png'
             
         ],
         [
@@ -27,8 +27,8 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             'link' => '',
             'start' => '19-01-2022',
             'end' => '21-02-2022',
-            'picture' => 'placeholder.png',
-            'technologies' => ['PHP', 'Symfony', 'Twig', 'Bootstrap', 'MySQL', 'Figma', 'SCRUM', 'CSS']
+            'technologies' => ['PHP', 'Symfony', 'Twig', 'Bootstrap', 'MySQL', 'Figma', 'SCRUM', 'CSS'],
+            'image' => 'manomano.png'
         ],
         [
             'title' => 'APCLO - Refonte pour une association de protection des chats',
@@ -36,9 +36,37 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             'description' => ' Refonte du site APCLO afin qu\'il mette en avant les animaux à adopter, de manière plus attrayante, claire et ergonomique afin d’optimiser les adoptions des pensionnaires. Le but étant de moderniser et restructurer le site, ainsi que d’épurer les informations afin de gagner en lisibilité.',
             'start' => '25-10-2021',
             'end' => '19-11-2021',
-            'picture' => 'placeholder.png',
-            'technologies' => ['PHP', 'Twig', 'Bootstrap', 'MySQL', 'Figma', 'SCRUM', 'CSS', 'Inkscape']
+            'technologies' => ['PHP', 'Twig', 'Bootstrap', 'MySQL', 'Figma', 'SCRUM', 'CSS', 'Inkscape'],
+            'image' => 'apclo.png'
+        ],
+        [
+            'title' => 'Container - Comment en faire un espace de vie?',
+            'link' => '',
+            'description' => 'Comment réhabiliter un container en fin d\'utilisation afin d\'en faire un espace de vie dans un contexte donné? Lors des descentes dans les gorges de l\' Ardèche, il peut devenir un espace de bivouac convivial grâce à son ouverture latérale permettant de garder un espace ouvert tout en délimitant une espace de convivialité.',
+            'start' => '25-12-2014',
+            'end' => '19-06-2015',
+            'technologies' => ['3DSMax', 'Photoshop', 'Autocad', 'Illustrator', 'InDesign'],
+            'image' => 'interieur.png'
+        ],
+        [
+            'title' => 'Mozaïques et chocolats',
+            'link' => '',
+            'description' => 'A partir de formes géométriques les plus basiques, réaliser une mozaïque de chocolats complexe et riche en possibilités afin de décorer les vitrines des chocolatiers d\' Orléans',
+            'start' => '25-10-2014',
+            'end' => '19-11-2015',
+            'technologies' => ['3DSMax', 'Photoshop', 'Autocad', 'Illustrator', 'InDesign'],
+            'image' => 'chocolat.png'
+        ],
+        [
+            'title' => 'Souffleur de verre, et Art de la table',
+            'link' => '',
+            'description' => 'Comment moderniser l\'Art de la table et plus particulièrement la technique ancestrale du soufflage de verre. Les verres partiellement fondus laissent place à une nouvelle manière de les appréhender et ainsi de déguster son contenu',
+            'start' => '25-10-2014',
+            'end' => '19-06-2015',
+            'technologies' => ['3DSMax', 'Photoshop', 'Autocad', 'Illustrator', 'InDesign'],
+            'image' => 'verre.png'
         ]
+
     ];
     public function load(ObjectManager $manager): void
     {
@@ -47,8 +75,8 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
             $newProject->setTitle($project['title']);
             $newProject->setDescription($project['description']);
             $newProject->setLink($project['link']);
-            $newProject->setImage($project['picture']);
-            copy(__DIR__ . '/placeholder.png', __DIR__ . '/../../public/uploads/projets/placeholder.png');
+            $newProject->setImage($project['image']);
+            copy(__DIR__ . '/'.$project['image'], __DIR__ . '/../../public/uploads/projets/'. $project['image']);
             for ($i = 0; $i < count($project['technologies']); $i++) {
 
                 $newProject->addTechnology($this->getReference($project['technologies'][$i]));
