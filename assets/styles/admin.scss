@@ -25,3 +25,11 @@ label.form-label {
 textarea {
     height: 150px;
 }
+
+.link:hover {
+    color:$highlight-color;
+}
+
+button.trash:hover {
+    color:$secondary;
+}

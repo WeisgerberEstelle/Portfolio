@@ -27,7 +27,7 @@ class AdminProjectController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="admin_project_new", methods={"GET", "POST"})
+     * @Route("/ajouter", name="admin_project_new", methods={"GET", "POST"})
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -38,7 +38,7 @@ class AdminProjectController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($project);
             $entityManager->flush();
-
+            $this->addFlash('success', 'Votre projet a bien été ajouté.');
             return $this->redirectToRoute('admin_project_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -49,17 +49,7 @@ class AdminProjectController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="admin_project_show", methods={"GET"})
-     */
-    public function show(Project $project): Response
-    {
-        return $this->render('admin_project/show.html.twig', [
-            'project' => $project,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="admin_project_edit", methods={"GET", "POST"})
+     * @Route("/{id}/modifier", name="admin_project_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Project $project, EntityManagerInterface $entityManager): Response
     {
@@ -68,7 +58,7 @@ class AdminProjectController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
-
+            $this->addFlash('success', 'Votre projet a bien été modifié.');
             return $this->redirectToRoute('admin_project_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -87,7 +77,7 @@ class AdminProjectController extends AbstractController
             $entityManager->remove($project);
             $entityManager->flush();
         }
-
+        $this->addFlash('danger', 'Votre projet a bien été supprimé.');
         return $this->redirectToRoute('admin_project_index', [], Response::HTTP_SEE_OTHER);
     }
 }
