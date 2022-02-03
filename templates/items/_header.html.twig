@@ -1,18 +1,23 @@
-<header class="container">
+<header class="container my-5 my-sm-0">
 	<div class="d-flex justify-content-around">
 		<img src="{{ asset('build/images/lampe.svg') }}" alt="lamp" class="lampe ms-lg-5 d-none d-sm-block">
-		<img src="{{ asset('build/images/logo.png') }}" alt="logo" class="logo align-self-end">
+		<div class="align-self-start d-flex flex-column align-items-center gap-4" >
+			<img src="{{ asset('build/images/logo.png') }}" alt="logo" class="logo">
+			<h2 class="text-center">Deux passions
+			</h2>
+		</div>
 		<img src="{{ asset('build/images/lampe.svg') }}" alt="lamp" class="lampe me-lg-5 d-none d-sm-block">
 	</div>
 	<div class="d-flex flex-column flex-sm-row justify-content-around gap-5 summaries">
 		<div class="dev">
-			<h2 class="text-center me-lg-5 my-4">Développeur web</h2>
-			<p class="px-3 px-sm-0 fs-5">Lorem ipsum dolor sit amet. 33 veniam voluptatum qui incidunt eligendi vel ipsam ipsum ut velit maxime. Et officia praesentium error vel consequatur praesentium et aspernatur quod qui quibusdam sapiente hic voluptas sunt.</p>
+			<h2 class="text-center me-lg-5 my-4">Développement web</h2>
+			<p class="px-3 px-sm-0 fs-5">Attirée depuis toujours par la création numérique, je me suis reconvertie cette année dans le développement web et vous propose aujourd'hui mes services comme développeur back afin de vous accompagner avec un regard neuf sur vos projets.</p>
 		</div>
-        <img src="{{ asset('build/images/separator.svg') }}" class="separator d-none d-sm-block mx-md-5">
-        <div class="designer">
-			<h2 class="text-center ms-lg-4 my-4">Designer</h2>
-			<p class="px-3 px-sm-0 fs-5">Lorem ipsum dolor sit amet. 33 veniam voluptatum qui incidunt eligendi vel ipsam ipsum ut velit maxime. Et officia praesentium error vel consequatur praesentium et aspernatur quod qui quibusdam sapiente hic voluptas sunt.</p>
+		<img src="{{ asset('build/images/separator.svg') }}" class="separator d-none d-sm-block mx-md-5">
+		<div class="designer">
+			<h2 class="text-center ms-lg-4 my-4">Design</h2>
+			<p class="px-3 px-sm-0 fs-5">
+				Passionnée par le design dans toutes ses formes, je conjugue technique et créativité pour développer des univers visuels efficaces et complets sur tous types de supports.</p>
 		</div>
 	</div>
 </header>
