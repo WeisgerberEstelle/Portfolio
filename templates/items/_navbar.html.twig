@@ -1,16 +1,35 @@
-<nav class="top-nav navbar navbar-expand-lg bg-primary">
+<nav class="top-nav navbar navbar-expand-lg bg-primary sticky-top">
 	<div class="container-fluid">
 		{% if is_granted('ROLE_ADMIN') %}
-			<a class="navbar-brand ms-5 nav-link fs-5" href="{{ path('admin_project_index') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle me-1" viewBox="0 0 16 16">
-				<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-				<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-			  </svg> Mon espace admin</a>
-			<a href="{{ path('app_logout') }}" class="nav-link">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right me-1" viewbox="0 0 16 16">
-					<path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-					<path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-				</svg>
-				Se déconnecter</a>
+			<div class="nav-item dropdown ms-2">
+				<button type="button" class="btn btn-primary link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mon espace</button>
+				<div class="dropdown-menu dropdown-menu-start bg-primary text-light" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item d-flex justify-content-start align-items-center text-light" href="{{ path('admin_project_index') }}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brush me-4" viewbox="0 0 16 16">
+							<path d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.118 8.118 0 0 1-3.078.132 3.659 3.659 0 0 1-.562-.135 1.382 1.382 0 0 1-.466-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04zM4.705 11.912a1.23 1.23 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.39 3.39 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3.122 3.122 0 0 0 .126-.75l-.793-.792zm1.44.026c.12-.04.277-.1.458-.183a5.068 5.068 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.795 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.973 3.04.007-.005a.031.031 0 0 1-.007.004zm3.582-3.043.002.001h-.002z"/>
+						</svg>
+						Projets</a>
+					<hr class="dropdown-divider">
+					<a class="dropdown-item d-flex justify-content-between align-items-center text-light" href="{{ path('admin_experience_index') }}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow me-3" viewbox="0 0 16 16">
+							<path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
+						</svg>
+						Expériences</a>
+					<hr class="dropdown-divider">
+					<a class="dropdown-item d-flex justify-content-between align-items-center text-light" href="{{ path('admin_formation_index') }}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square me-3" viewbox="0 0 16 16">
+							<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+							<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+						</svg>Formations</a>
+					<hr class="dropdown-divider">
+					<a class="dropdown-item d-flex justify-content-between align-items-center text-light" href="{{ path('logout') }}">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left me-3" viewbox="0 0 16 16">
+							<path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+							<path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+						</svg>Déconnexion</a>
+
+				</div>
+			</div>
 		{% endif %}
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#fafafa" class="bi bi-list" viewbox="0 0 16 16">
@@ -19,10 +38,11 @@
 		</button>
 		<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 			<div class="navbar-nav gap-3 me-5">
-				<a class="nav-link fs-4" href="{{ path('home') }}">Accueil</a>
-				<a class="nav-link fs-4" href="{{ path('about') }}">A propos</a>
-				<a class="nav-link fs-4" href="{{ path('projects') }}">Projets</a>
-				<a class="nav-link fs-4" href="{{ path('contact') }}">Contact</a>
+
+				<a class="nav-link fs-4 {{ app.request.attributes.get('_route') == 'home' ? 'text-secondary text-decoration-underline' : '' }} " href="{{ path('home') }}">Accueil</a>
+				<a class="nav-link fs-4 {{ app.request.attributes.get('_route') == 'about' ? 'text-secondary text-decoration-underline' : '' }}" href="{{ path('about') }}">A propos</a>
+				<a class="nav-link fs-4 {{ app.request.attributes.get('_route') == 'projects' ? 'text-secondary text-decoration-underline' : '' }}" href="{{ path('projects') }}">Projets</a>
+				<a class="nav-link fs-4 {{ app.request.attributes.get('_route') == 'contact' ? 'text-secondary text-decoration-underline' : '' }}" href="{{ path('contact') }}">Contact</a>
 			</div>
 		</div>
 	</div>
