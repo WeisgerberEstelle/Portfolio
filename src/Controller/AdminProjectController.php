@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/admin/projets")
@@ -18,6 +19,7 @@ class AdminProjectController extends AbstractController
 {
     /**
      * @Route("/", name="admin_project_index", methods={"GET"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function index(ProjectRepository $projectRepository): Response
     {
@@ -28,6 +30,7 @@ class AdminProjectController extends AbstractController
 
     /**
      * @Route("/ajouter", name="admin_project_new", methods={"GET", "POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -50,6 +53,7 @@ class AdminProjectController extends AbstractController
 
     /**
      * @Route("/{id}/modifier", name="admin_project_edit", methods={"GET", "POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function edit(Request $request, Project $project, EntityManagerInterface $entityManager): Response
     {
@@ -70,6 +74,7 @@ class AdminProjectController extends AbstractController
 
     /**
      * @Route("/{id}", name="admin_project_delete", methods={"POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Project $project, EntityManagerInterface $entityManager): Response
     {
