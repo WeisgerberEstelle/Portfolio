@@ -8,20 +8,27 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 class ContactController extends AbstractController
 {
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, MailerInterface $mailer): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            
+            $email = (new Email())
+                ->from($this->getParameter('mailer_from'))
+                ->to('akumaony@gmail.com')
+                ->subject('Vous avez reçu un nouveau message')
+                ->html($this->renderView('contact/newEmail.html.twig', ['contact' => $contact]));
+            $mailer->send($email);
+        
             $this->addFlash('success', 'Merci, votre message a bien été envoyé.');
 
             return $this->redirectToRoute('contact');
