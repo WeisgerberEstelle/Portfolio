@@ -1,0 +1,17 @@
+@import "variables.scss";
+
+thead th,
+tbody td {
+    font-family: $text-family;
+}
+
+tbody td {
+    color: $light
+}
+tbody td:hover {
+    color: $light
+}
+
+.ref, .site {
+    color: $highlight-color;
+}
