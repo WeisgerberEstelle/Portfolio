@@ -1,0 +1,21 @@
+<section class="container my-5">
+	<h2 class="text-center my-5">Formations</h2>
+	{% for formation in formations %}
+		<div class="col-6 offset-3 my-5 ">
+			<h3 class="title">{{ formation.startDate|date('F Y')}}
+				{% if formation.endDate %}
+					/
+					{{ formation.endDate|date('F Y')}}
+				{% endif %}
+				-
+				{{ formation.title}}</h3>
+			<h4 class="text-secondary subtitle">{{formation.place}}
+
+				<p class="mt-4 fs-5 description">
+					{{formation.description}}</p>
+				<div class="d-flex justify-content-center"><img src="{{ asset('build/images/separator3.svg') }}" alt="lamp" class="separator my-5 "></div>
+
+			</div>
+
+		{% endfor %}
+	</section>
