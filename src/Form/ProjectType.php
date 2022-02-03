@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Project;
+use Proxies\__CG__\App\Entity\Technology;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -41,6 +43,18 @@ class ProjectType extends AbstractType
                 'download_uri' => false,
                 'help' => 'L\'image ne doit pas dépasser 2M et doit être au format : jpg, jpeg, png, ou webp.'
             ])
+            ->add('technologies', EntityType::class, [
+
+                'class' => Technology::class,
+            
+                'choice_label' => 'name',
+            
+                'multiple' => true,
+            
+                'expanded' => true,
+
+                'by_reference' => false,
+            ]);
         ;
     }
 
